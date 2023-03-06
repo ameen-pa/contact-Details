@@ -1,0 +1,53 @@
+
+<header style="background-image: url(https://static.vecteezy.com/system/resources/thumbnails/008/996/859/small/abstract-minimal-earth-tone-long-banner-template-organic-shapes-floral-and-leaves-background-with-copy-space-for-text-facebook-cover-free-vector.jpg);" >
+
+    <div class="container mt-5">
+        <h1 class="text-center mt-2 mb-2 text-danger p-3">Contact Details</h1>
+        <div class="row mt-2">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form class="d-flex border p-3">
+                  <input name="pipe" [(ngModel)]="searchContact" id="input" placeholder="search your contact here" type="text" class="form-control">
+                    <button  type="button" class="btn btn-success ms-1">Search</button>
+                </form>
+                <div id="result" class="mt-2">
+
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <table class="table table-bordered table text-center text-primary p-5 mt-5">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Company name</th>
+          <th>Job title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  contact of allContacts | filter:searchContact:'name'">
+          <td>{{contact.firstName}} {{contact.lastName}}</td>
+          <td><img width="100px" height="100px" src="{{contact.image}}" alt=""></td>
+          <td>{{contact.age}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.phone}}</td>
+          <td>{{contact.address.address}},{{contact.address.city}}</td>
+          <td>{{contact.company.name}}</td>
+          <td>{{contact.company.title}}</td>
+
+
+
+        </tr>
+      </tbody>
+    
+    </table>
+        
+</header>
+
+
